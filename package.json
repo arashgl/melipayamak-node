@@ -4,7 +4,7 @@
   "description": "Melipayamak Nodejs Wrapper",
   "main": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -27,5 +27,9 @@
     "soap": "^0.23.0"
   },
   "homepage": "https://github.com/Melipayamak/melipayamak-node#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^20.11.21",
+    "@types/soap": "^0.21.0",
+    "typescript": "^5.3.3"
+  }
 }
