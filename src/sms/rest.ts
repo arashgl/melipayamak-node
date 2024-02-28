@@ -9,9 +9,9 @@ export default class Rest extends Base {
 
   private request(method: string, params: any): void {
     let data = Object.assign({}, this.data, params);
-    var postdata = querystring.stringify(data);
+    const postdata = querystring.stringify(data);
 
-    var options = {
+    const options = {
       host: "rest.payamak-panel.com",
       port: 443,
       path: `/api/SendSMS/${method}`,
@@ -22,7 +22,7 @@ export default class Rest extends Base {
       },
     };
 
-    var req = https.request(options, function (res) {
+    const req = https.request(options, function (res) {
       console.log("STATUS: " + res.statusCode);
       res.setEncoding("utf8");
       res.on("data", function (chunk) {

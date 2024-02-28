@@ -20,7 +20,7 @@ export default class MelipayamakApi {
     this.password = password;
   }
 
-  sms(method: string = "rest", type: string = "async") {
+  sms(method: "rest" | "soap" = "rest", type: string = "async") {
     if (method == "rest") {
       if (type == "async") return new RestAsync(this.username, this.password);
       else return new Rest(this.username, this.password);

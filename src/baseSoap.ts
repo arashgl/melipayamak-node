@@ -14,9 +14,7 @@ export default class BaseSoap extends Base {
           return client[funcName + "Async"](params);
         })
         .then((result) => {
-          returnResult
-            ? resolve(result[0][funcName + "Result"])
-            : resolve(result[0]);
+          resolve(result);
         })
         .catch((err) => {
           reject(err);

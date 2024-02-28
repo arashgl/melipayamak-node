@@ -36,13 +36,15 @@ export default class Soap extends BaseSoap {
   send(_to: string | string[], from: string, text: string, isflash = false) {
     const funcName = Array.isArray(_to) ? "SendSimpleSMS" : "SendSimpleSMS2";
     const to = Array.isArray(_to) ? [{ string: _to }] : _to;
-    return this.execute(this.sendUrl, funcName, {
+    const s = this.execute(this.sendUrl, funcName, {
       ...this.data,
       to,
       from,
       text,
       isflash,
     });
+    console.log(s);
+    return s;
   }
 
   send2(_to: string[], from: string, text: string, isflash = false, udh = "") {
